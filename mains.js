@@ -42,17 +42,21 @@
 // 	console.log('goodbye');
 // }
 //ex.7
-// function toDoList(e) {
-// 	e.preventDefault();
-// 	let a = document.getElementById('ul');
-// 	let b = document.createElement('li');
-// 	let ab = document.getElementById('input1');
-// 	b.innerHTML = ab.value;
-// 	a.appendChild(b);
-// 	console.log(a);
-// 	console.log(b);
-// 	b.addEventListener('click', () => {
-// 		a.removeChild(b);
-// 	});
-// 	ab.value = '';
-// }
+function toDoList(e) {
+	e.preventDefault();
+	let a = document.getElementById('ul');
+	let b = document.createElement('li');
+	let ab = document.getElementById('input1');
+	let checkbox = document.createElement('input');
+	checkbox.type = 'checkbox';
+	a.appendChild(checkbox);
+	b.innerHTML = ab.value;
+	a.appendChild(b);
+	console.log(a);
+	console.log(b);
+	b.addEventListener('click', () => {
+		a.removeChild(b);
+		a.removeChild(checkbox);
+	});
+	ab.value = '';
+}
